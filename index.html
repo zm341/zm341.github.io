@@ -1,0 +1,292 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accounting Portfolio | Rutgers New Brunswick</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-black: #0a0a0a;
+            --emerald: #2ecc71;
+            --deep-forest: #1b4d3e;
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(46, 204, 113, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-black);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        /* Animated Breathing Background */
+        .living-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: radial-gradient(circle at 50% 50%, var(--deep-forest) 0%, var(--bg-black) 80%);
+            animation: breathe 10s infinite alternate ease-in-out;
+        }
+
+        @keyframes breathe {
+            0% { transform: scale(1); opacity: 0.4; }
+            100% { transform: scale(1.15); opacity: 0.7; }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--emerald);
+            letter-spacing: -1px;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .hero span {
+            color: var(--emerald);
+            text-shadow: 0 0 20px rgba(46, 204, 113, 0.4);
+        }
+
+        .hero p {
+            color: var(--text-dim);
+            max-width: 600px;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Buttons */
+        .cta-btn {
+            padding: 15px 35px;
+            background: transparent;
+            border: 2px solid var(--emerald);
+            color: var(--emerald);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-btn:hover {
+            background: var(--emerald);
+            color: var(--bg-black);
+            box-shadow: 0 0 30px var(--emerald);
+            transform: scale(1.05);
+        }
+
+        /* Sections & Grids */
+        section {
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background: var(--emerald);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            padding: 2.5rem;
+            border-radius: 15px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-12px);
+            border-color: var(--emerald);
+            box-shadow: 0 10px 40px rgba(46, 204, 113, 0.15);
+        }
+
+        .card h3 {
+            color: var(--emerald);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--deep-forest);
+            color: var(--emerald);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            padding: 50px 10%;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-dim);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            nav { padding: 1rem 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="living-bg"></div>
+
+    <nav>
+        <div class="logo">RU_ACCOUNTING</div>
+        <div style="color: var(--text-dim); font-size: 0.9rem;">Class of 2027</div>
+    </nav>
+
+    <header class="hero">
+        <h1 data-aos="zoom-out-up" data-aos-duration="1200">Building <span>Financial Accuracy</span> with Passion.</h1>
+        <p data-aos="fade-up" data-aos-delay="400">Junior Accounting Major at Rutgers University–New Brunswick. Specializing in audit readiness, GAAP compliance, and advanced financial modeling.</p>
+        <div data-aos="fade-up" data-aos-delay="600">
+            <a href="#" class="cta-btn">Download Resume</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2 class="section-title" data-aos="fade-right">Professional Bio</h2>
+        <div class="card" data-aos="fade-up">
+            <p style="font-size: 1.1rem; color: var(--text-dim);">As a Junior at Rutgers, I bridge the gap between academic excellence and real-world fiscal responsibility. I view accounting not just as numbers, but as the "Celebration of Life" within a business—the vital pulse that ensures growth and sustainability. Currently maintaining a competitive GPA while engaging in the Rutgers Accounting Society and pursuing internship opportunities in Public Accounting.</p>
+        </div>
+    </section>
+
+    <section id="expertise">
+        <h2 class="section-title" data-aos="fade-right">Competencies</h2>
+        <div class="grid">
+            <div class="card" data-aos="flip-up" data-aos-delay="100">
+                <div class="tag">Technical</div>
+                <h3>Advanced Excel</h3>
+                <p style="color: var(--text-dim);">Expert in Pivot Tables, VLOOKUP/XLOOKUP, and complex financial modeling for predictive analysis.</p>
+            </div>
+            <div class="card" data-aos="flip-up" data-aos-delay="200">
+                <div class="tag">Regulatory</div>
+                <h3>GAAP Standards</h3>
+                <p style="color: var(--text-dim);">Deep understanding of Generally Accepted Accounting Principles and financial reporting frameworks.</p>
+            </div>
+            <div class="card" data-aos="flip-up" data-aos-delay="300">
+                <div class="tag">Analytical</div>
+                <h3>Audit Prep</h3>
+                <p style="color: var(--text-dim);">Experience in analyzing ledgers and reconciling accounts to ensure high-integrity audit trails.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2 class="section-title" data-aos="fade-right">Academic Journey</h2>
+        <div class="grid">
+            <div class="card" data-aos="fade-left">
+                <h3>Rutgers Business School</h3>
+                <p>Junior Year - Accounting Major</p>
+                <ul style="margin-top: 15px; color: var(--text-dim); list-style-position: inside;">
+                    <li>Relevant Coursework: Intermediate Accounting I & II, Cost Accounting</li>
+                    <li>Active Member: Rutgers Accounting Society</li>
+                    <li>Dean's List Recognition</li>
+                </ul>
+            </div>
+            <div class="card" data-aos="fade-right">
+                <h3>VITA Volunteer (Placeholder)</h3>
+                <p>Volunteer Income Tax Assistance</p>
+                <p style="color: var(--text-dim); margin-top: 10px;">Assisting low-income community members with tax preparation while ensuring 100% compliance with IRS guidelines.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 | Rutgers New Brunswick Accounting Portfolio</p>
+        <p style="font-size: 0.8rem; margin-top: 10px; color: var(--emerald);">Crafting Financial Clarity</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Animations
+        AOS.init({
+            duration: 1000,
+            once: false,
+            mirror: true,
+            easing: 'ease-out-back'
+        });
+
+        // Mouse movement parallax effect for breathing background
+        document.addEventListener('mousemove', (e) => {
+            const bg = document.querySelector('.living-bg');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            bg.style.transform = `translate(${x * 20}px, ${y * 20}px) scale(1.1)`;
+        });
+    </script>
+</body>
+</html>
+```
