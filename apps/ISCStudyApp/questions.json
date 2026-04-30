@@ -1,0 +1,152 @@
+[
+    {
+        "id": "ISC-MCQ-001",
+        "questionType": "MCQ",
+        "contentArea": "Area I: Information Systems and Data Management",
+        "skillLevel": "Remembering and Understanding",
+        "questionText": "In a relational database, which of the following is used to uniquely identify each record within a single table?",
+        "options": [
+            "Foreign Key",
+            "Primary Key",
+            "Index",
+            "Data Dictionary"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "A primary key is a specific column or set of columns whose values uniquely identify a row (record) in a table. A foreign key is used to link tables together."
+    },
+    {
+        "id": "ISC-MCQ-002",
+        "questionType": "MCQ",
+        "contentArea": "Area II: Security, Confidentiality, and Privacy",
+        "skillLevel": "Application",
+        "questionText": "Which of the following is the most effective control to prevent a segregation of duties violation in a newly implemented ERP system?",
+        "options": [
+            "Mandatory vacations",
+            "Role-based access controls (RBAC)",
+            "Biometric authentication",
+            "Daily backup of transaction logs"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Role-based access controls (RBAC) restrict system access to authorized users based on their specific job functions, inherently enforcing segregation of duties within the system architecture."
+    },
+    {
+        "id": "ISC-MCQ-003",
+        "questionType": "MCQ",
+        "contentArea": "Area III: SOC Engagements",
+        "skillLevel": "Remembering and Understanding",
+        "questionText": "Which type of SOC report evaluates both the suitability of the design and the operating effectiveness of controls over a specified period of time?",
+        "options": [
+            "SOC 1 Type 1",
+            "SOC 1 Type 2",
+            "SOC 2 Type 1",
+            "SOC 3"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "A Type 2 report covers the operating effectiveness of controls over a specified period, whereas a Type 1 report only covers the design of controls at a specific point in time."
+    },
+    {
+        "id": "ISC-MCQ-004",
+        "questionType": "MCQ",
+        "contentArea": "Area III: SOC Engagements",
+        "skillLevel": "Analysis",
+        "questionText": "A service auditor discovers that a subservice organization is used by the primary service organization. If the inclusive method is used, what must the service auditor do?",
+        "options": [
+            "Exclude the subservice organization's controls from the report.",
+            "Issue a qualified opinion due to scope limitation.",
+            "Include the subservice organization's controls and require a representation letter from their management.",
+            "Rely solely on the subservice organization's own SOC report."
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "Under the inclusive method, the service organization's description of its system includes the services provided by the subservice organization, and the subservice organization's controls are included in the scope of the engagement."
+    },
+    {
+        "id": "ISC-MCQ-005",
+        "questionType": "MCQ",
+        "contentArea": "Area II: Security, Confidentiality, and Privacy",
+        "skillLevel": "Remembering and Understanding",
+        "questionText": "In the context of business continuity and disaster recovery, which metric defines the maximum acceptable amount of data loss measured in time?",
+        "options": [
+            "Recovery Time Objective (RTO)",
+            "Recovery Point Objective (RPO)",
+            "Maximum Tolerable Downtime (MTD)",
+            "Mean Time Between Failures (MTBF)"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Recovery Point Objective (RPO) is the maximum acceptable amount of data loss measured in time. It dictates how frequently backups must occur. RTO refers to the time it takes to restore operations."
+    },
+    {
+        "id": "ISC-MCQ-006",
+        "questionType": "MCQ",
+        "contentArea": "Area I: Information Systems and Data Management",
+        "skillLevel": "Application",
+        "questionText": "A company adopts a cloud computing model where it leases servers, storage, and networking hardware from a provider, but manages its own operating systems and applications. This is an example of:",
+        "options": [
+            "Software as a Service (SaaS)",
+            "Platform as a Service (PaaS)",
+            "Infrastructure as a Service (IaaS)",
+            "Database as a Service (DBaaS)"
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "Infrastructure as a Service (IaaS) provides the underlying physical and virtualized hardware components, leaving the OS and application management to the consumer."
+    },
+    {
+        "id": "ISC-MCQ-007",
+        "questionType": "MCQ",
+        "contentArea": "Area II: Security, Confidentiality, and Privacy",
+        "skillLevel": "Application",
+        "questionText": "When setting up an asymmetric encryption system for secure email communication, which key should the sender use to encrypt a message so that only the recipient can read it?",
+        "options": [
+            "The sender's public key",
+            "The sender's private key",
+            "The recipient's public key",
+            "The recipient's private key"
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "In asymmetric (public key) encryption, a message is encrypted with the recipient's public key. It can then only be decrypted by the corresponding private key, which only the recipient possesses."
+    },
+    {
+        "id": "ISC-MCQ-008",
+        "questionType": "MCQ",
+        "contentArea": "Area I: Information Systems and Data Management",
+        "skillLevel": "Analysis",
+        "questionText": "An accounts payable clerk accidentally enters an invoice amount as $5,000,000 instead of $5,000. Which of the following application controls would most effectively prevent this error from being processed?",
+        "options": [
+            "Completeness check",
+            "Validity check",
+            "Limit check",
+            "Check digit verification"
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "A limit check (or reasonableness check) tests a numerical amount against a fixed value. If an invoice amount exceeds a predefined reasonable limit (e.g., $100,000), the system will flag or reject the entry."
+    },
+    {
+        "id": "ISC-MCQ-009",
+        "questionType": "MCQ",
+        "contentArea": "Area III: SOC Engagements",
+        "skillLevel": "Remembering and Understanding",
+        "questionText": "Which of the following is NOT one of the five Trust Services Criteria (TSC) evaluated in a SOC 2 engagement?",
+        "options": [
+            "Security",
+            "Availability",
+            "Profitability",
+            "Processing Integrity"
+        ],
+        "correctAnswerIndex": 2,
+        "explanation": "The five Trust Services Criteria are Security, Availability, Processing Integrity, Confidentiality, and Privacy. Profitability is not a criterion."
+    },
+    {
+        "id": "ISC-MCQ-010",
+        "questionType": "MCQ",
+        "contentArea": "Area III: SOC Engagements",
+        "skillLevel": "Application",
+        "questionText": "A service organization uses logical access controls that require user entity management to grant and revoke access for their own employees. Where should this requirement be documented in the SOC report?",
+        "options": [
+            "In the service auditor's opinion letter",
+            "Under Complementary User Entity Controls (CUECs)",
+            "Within the subservice organization carve-out section",
+            "In the independent auditor's management representation letter"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Complementary User Entity Controls (CUECs) are controls that the service organization expects its customers (user entities) to implement so that the stated control objectives can be fully achieved."
+    }
+]

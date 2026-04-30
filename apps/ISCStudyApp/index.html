@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISC Construct | CPA Matrix Prep</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Confetti Library for Matrix Glitch Celebrations -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <!-- The Digital Rain Background -->
+    <canvas id="matrixCanvas"></canvas>
+
+    <!-- The Main Terminal Interface -->
+    <div id="terminal">
+        <header id="hud">
+            <div id="connection-time">⚡ CONNECTION STABILITY: <span id="streak-count">0</span> DAYS</div>
+            <div id="mastery-level">💾 UPLOAD PROGRESS: <span id="score-count">0</span> XP</div>
+        </header>
+
+        <main id="quiz-container">
+            <div id="question-meta">> SYSTEM INITIALIZING...</div>
+            <h2 id="question-text">Awaiting operator input...</h2>
+            
+            <div id="options-container">
+                <!-- JavaScript will inject multiple-choice buttons here -->
+            </div>
+
+            <div id="action-area">
+                <button id="submit-btn" class="matrix-btn" style="display: none;">Execute</button>
+                <button id="next-btn" class="matrix-btn" style="display: none;">Next Program ></button>
+            </div>
+
+            <div id="feedback-area" style="display: none;">
+                <h3 id="feedback-status"></h3>
+                <p id="feedback-text"></p>
+            </div>
+        </main>
+    </div>
+
+    <!-- The Logic Brain -->
+    <script src="app.js"></script>
+</body>
+</html>
