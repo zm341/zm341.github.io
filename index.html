@@ -3,51 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accounting Portfolio | Professional Explorer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <title>Accounting Portfolio | Rutgers New Brunswick | Nature Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
+        /* Color Palette & Variables */
         :root {
-            --forest-deep: #1b4332;
-            --leaf-bright: #74b816;
-            --slate: #2d3436;
-            --mist: rgba(255, 255, 255, 0.05);
-            --earth-black: #0f1412;
-            --text-white: #f8f9fa;
+            --bg-pure-white: #ffffff;
+            --bg-cream: #fafafa;
+            --mint-light: #e0f2f1; /* Light sky mist */
+            --fern-green: #2e7d32; /* Rich accounting integrity green */
+            --moss-subtle: #81c784; /* Soft highlights */
+            --slate-gray: #37474f; /* Modern text */
+            --text-main: #2c3e50;
+            --text-dim: #607d8b;
+            --glass-white: rgba(255, 255, 255, 0.8);
+            --glass-border: rgba(129, 199, 132, 0.2);
+            --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.03);
+            --shadow-moss: 0 5px 20px rgba(129, 199, 132, 0.1);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--earth-black);
-            color: var(--text-white);
+            background-color: var(--bg-pure-white);
+            color: var(--text-main);
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        /* Misty Animated Background */
-        .mist-container {
+        /* Animated Breathing Background (Misty Air) */
+        .living-bg {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: linear-gradient(135deg, #0f1412 0%, #1b4332 100%);
-            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+            z-index: -2;
+            background: radial-gradient(circle at 30% 30%, var(--mint-light) 0%, var(--bg-pure-white) 60%);
+            animation: breatheMisty 12s infinite alternate ease-in-out;
         }
 
-        .mist-layer {
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(116, 184, 22, 0.05) 0%, transparent 50%);
-            animation: drift 20s infinite alternate ease-in-out;
-        }
-
-        @keyframes drift {
-            from { transform: translate(-10%, -10%); }
-            to { transform: translate(10%, 10%); }
+        @keyframes breatheMisty {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.1); opacity: 1; }
         }
 
         /* Navigation */
@@ -55,17 +61,33 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 1.5rem 10%;
+            padding: 1.2rem 10%;
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            background: var(--glass-white);
+            backdrop-filter: blur(20px);
             z-index: 1000;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(129, 199, 132, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
         }
 
-        .logo { font-weight: 900; color: var(--leaf-bright); letter-spacing: 2px; }
+        .logo {
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: var(--fern-green);
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+        }
 
-        /* Hero */
+        .logo::before {
+            content: '🌿'; /* Subtle nature icon */
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+
+        /* Hero Section */
         .hero {
             height: 100vh;
             display: flex;
@@ -73,18 +95,26 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 0 10%;
+            padding: 120px 10% 60px 10%;
+            background: linear-gradient(to bottom, var(--bg-pure-white) 0%, var(--bg-cream) 100%);
+            position: relative;
         }
 
-        .profile-frame {
-            width: 180px;
-            height: 180px;
+        /* Profile Image Container - Nature Edition */
+        .profile-container {
+            width: 210px;
+            height: 210px;
+            margin-bottom: 2.5rem;
+            position: relative;
             border-radius: 50%;
-            padding: 8px;
-            background: var(--slate);
-            border: 2px solid var(--leaf-bright);
-            margin-bottom: 2rem;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            padding: 8px; /* Frame space */
+            background: linear-gradient(135deg, var(--mint-light), #fff, var(--moss-subtle));
+            box-shadow: 0 10px 40px rgba(129, 199, 132, 0.15);
+            transition: transform 0.4s ease;
+        }
+
+        .profile-container:hover {
+            transform: scale(1.03) rotate(2deg);
         }
 
         .profile-img {
@@ -92,111 +122,283 @@
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
-            filter: grayscale(20%);
+            border: 5px solid #fff; /* Internal white border */
+            display: block;
         }
 
-        .hero h1 { font-size: clamp(2rem, 6vw, 4rem); margin-bottom: 1rem; text-transform: uppercase; }
-        .hero span { color: var(--leaf-bright); }
-        .hero p { color: #bdc3c7; max-width: 600px; margin-bottom: 2rem; }
+        .hero h1 {
+            font-size: clamp(2rem, 6vw, 4rem);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+        }
 
-        /* Buttons */
-        .btn {
-            padding: 12px 30px;
-            border: 2px solid var(--leaf-bright);
-            color: var(--leaf-bright);
+        .hero span {
+            color: var(--fern-green);
+            background: linear-gradient(to bottom right, var(--fern-green), var(--moss-subtle));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-dim);
+            max-width: 650px;
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+        }
+
+        /* Buttons (Moss Glow) */
+        .cta-btn {
+            padding: 16px 38px;
+            background: var(--fern-green);
+            color: #fff;
             text-decoration: none;
-            border-radius: 50px;
             font-weight: 700;
-            transition: 0.4s;
+            border-radius: 50px;
+            transition: all 0.4s ease;
             text-transform: uppercase;
-            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            font-size: 0.85rem;
+            border: none;
+            box-shadow: 0 5px 20px rgba(46, 125, 50, 0.2);
         }
 
-        .btn:hover {
-            background: var(--leaf-bright);
-            color: var(--earth-black);
-            box-shadow: 0 0 20px rgba(116, 184, 22, 0.4);
+        .cta-btn:hover {
+            background: var(--moss-subtle);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(129, 199, 132, 0.3);
         }
 
-        /* Sections */
-        section { padding: 100px 10%; }
-        .section-title { font-size: 2rem; margin-bottom: 3rem; border-left: 5px solid var(--leaf-bright); padding-left: 20px; }
+        /* Sections, Titles, Grids */
+        section {
+            padding: 120px 10%;
+            background-color: var(--bg-pure-white);
+        }
 
+        #expertise, #experience {
+            background-color: var(--bg-cream);
+            border-radius: 60px; /* Curvature for nature */
+            margin: 40px 10%;
+            padding: 120px 5%;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            margin-bottom: 4rem;
+            position: relative;
+            display: inline-block;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 70px;
+            height: 6px;
+            background: var(--moss-subtle);
+            border-radius: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        /* Cards (Light, Organic Glow) */
         .card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.05);
-            padding: 30px;
-            border-radius: 20px;
-            transition: 0.4s;
-            margin-bottom: 20px;
+            background: #fff;
+            border: 1px solid var(--glass-border);
+            padding: 3rem;
+            border-radius: 25px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
         }
 
         .card:hover {
-            background: rgba(116, 184, 22, 0.05);
-            transform: translateY(-5px);
-            border-color: var(--leaf-bright);
+            transform: translateY(-15px) scale(1.02);
+            border-color: var(--moss-subtle);
+            box-shadow: var(--shadow-moss);
         }
 
-        .card h3 { color: var(--leaf-bright); margin-bottom: 10px; }
+        /* Decorative Leaf (Micro-interaction) */
+        .card::after {
+            content: '🍃';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 3rem;
+            opacity: 0.03;
+            transition: opacity 0.4s ease;
+        }
 
-        footer { text-align: center; padding: 50px; opacity: 0.5; font-size: 0.8rem; }
+        .card:hover::after {
+            opacity: 0.1;
+        }
 
+        .card h3 {
+            color: var(--fern-green);
+            margin-bottom: 1.2rem;
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        .card p, .card ul {
+            color: var(--text-dim);
+            font-size: 1rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--mint-light);
+            color: var(--fern-green);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 10px;
+            margin-bottom: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* Accounting List Style */
+        .accounting-list {
+            margin-top: 20px;
+            list-style-type: none;
+        }
+
+        .accounting-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+
+        .accounting-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--moss-subtle);
+            font-weight: 800;
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 10%;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-dim);
+            background-color: var(--bg-cream);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.6rem; }
+            nav { padding: 1rem 5%; }
+            .profile-container { width: 170px; height: 170px; }
+            .section-title { font-size: 2.2rem; }
+            #expertise, #experience { margin: 20px 5%; padding: 80px 5%; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="mist-container">
-        <div class="mist-layer"></div>
-    </div>
+    <div class="living-bg"></div>
 
     <nav>
-        <div class="logo">TRAILHEAD_ACC</div>
-        <div style="font-size: 0.8rem;">Rutgers Junior • Class of 2027</div>
+        <div class="logo">RU_ACCOUNTING</div>
+        <div style="color: var(--fern-green); font-size: 0.9rem; font-weight: 600;">Rutgers Junior • Class of 2027</div>
     </nav>
 
     <header class="hero">
-        <div class="profile-frame" data-aos="zoom-in">
+        <div class="profile-container" data-aos="zoom-in" data-aos-duration="1200">
             <img src="Assets/ProfilePicture.JPG" alt="Professional Headshot" class="profile-img">
         </div>
-        <h1 data-aos="fade-up">Navigating <span>Financial Landscapes</span>.</h1>
-        <p data-aos="fade-up" data-aos-delay="200">Junior Accounting Major at Rutgers University–New Brunswick. Finding the clear path through complex data with the precision of a seasoned hiker.</p>
-        <div data-aos="fade-up" data-aos-delay="400">
-            <a href="#" class="btn">View My Trailmap (Resume)</a>
+        <h1 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">Building <span>Financial Precision</span> with Passion.</h1>
+        <p data-aos="fade-up" data-aos-delay="500">Junior Accounting Major at Rutgers University–New Brunswick. Leveraging advanced analytics and GAAP expertise to drive organizational transparency.</p>
+        <div data-aos="fade-up" data-aos-delay="700">
+            <a href="#" class="cta-btn">Download Resume</a>
         </div>
     </header>
 
     <section id="about">
-        <h2 class="section-title" data-aos="fade-right">The Compass</h2>
+        <h2 class="section-title" data-aos="fade-right">The Mission</h2>
         <div class="card" data-aos="fade-up">
-            <p>Accounting is more than just balance sheets—it's about finding the peak of organizational efficiency. As a Rutgers Junior, I combine my passion for the outdoors with my dedication to GAAP integrity. Just as every trail requires a map, every business requires transparent, accurate financial storytelling.</p>
+            <p style="font-size: 1.15rem; color: var(--text-dim); line-height: 1.9; font-weight: 400;">As a Junior at the Rutgers Business School, I view accounting as the foundation of sustainable growth. My focus is on transforming raw fiscal data into actionable insights. Currently pursuing a CPA track with a commitment to integrity, precision, and the "celebration" of business vitality through clear financial storytelling.</p>
         </div>
     </section>
 
-    <section id="skills">
-        <h2 class="section-title" data-aos="fade-right">Gear & Tools</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-            <div class="card" data-aos="fade-up">
-                <h3>Excel Analytics</h3>
-                <p>Mastering the "terrain" of data with Pivot Tables and advanced modeling.</p>
+    <section id="expertise">
+        <h2 class="section-title" data-aos="fade-right">Technical Arsenal</h2>
+        <div class="grid">
+            <div class="card" data-aos="flip-left" data-aos-delay="100">
+                <div class="tag">Analysis</div>
+                <h3>Excel Mastery</h3>
+                <p>Utilizing Pivot Tables, Power Query, and advanced lookups to streamline reporting and auditing processes.</p>
             </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="100">
-                <h3>Audit Readiness</h3>
-                <p>Ensuring every step is documented and every trail is compliant with GAAP standards.</p>
+            <div class="card" data-aos="flip-left" data-aos-delay="200">
+                <div class="tag">Standards</div>
+                <h3>GAAP Expertise</h3>
+                <p>Strong foundation in financial reporting, revenue recognition, and ethical accounting standards.</p>
             </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="200">
-                <h3>Fiscal Stewardship</h3>
-                <p>A commitment to long-term sustainability and financial growth.</p>
+            <div class="card" data-aos="flip-left" data-aos-delay="300">
+                <div class="tag">Innovation</div>
+                <h3>Data Analytics</h3>
+                <p>Leveraging digital tools to identify trends, mitigate risks, and enhance internal control systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2 class="section-title" data-aos="fade-right">Academic Portfolio</h2>
+        <div class="grid">
+            <div class="card" data-aos="fade-left">
+                <div class="tag">Education</div>
+                <h3>Rutgers Business School</h3>
+                <p>Junior Year | B.S. in Accounting</p>
+                <ul class="accounting-list">
+                    <li>Intermediate Accounting Series</li>
+                    <li>Cost Accounting & Financial Management</li>
+                    <li>Rutgers Accounting Society Member</li>
+                    <li>GPA: [Insert GPA Placeholder]</li>
+                </ul>
+            </div>
+            <div class="card" data-aos="fade-right">
+                <div class="tag">Service</div>
+                <h3>VITA Program</h3>
+                <p>Tax Prep Volunteer</p>
+                <p style="margin-top: 15px;">Ensuring compliance and accuracy for local community tax filings while adhering to strict IRS standards.</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 | Built for the Long Haul | Rutgers New Brunswick</p>
+        <p>&copy; 2026 | Professional Accounting Portfolio | Rutgers New Brunswick</p>
+        <p style="font-size: 0.85rem; margin-top: 12px; color: var(--fern-green); font-weight: 600;">Rooted in Integrity, Growing Opportunities.</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: false });
+        // Initialize Animations
+        AOS.init({
+            duration: 1000,
+            once: false,
+            mirror: true,
+            easing: 'ease-out-cubic' // Softer easing
+        });
+
+        // Soft, Misty Background Parallax Effect
+        document.addEventListener('mousemove', (e) => {
+            const bg = document.querySelector('.living-bg');
+            const x = (window.innerWidth - e.pageX * 1) / 120; // Subtle movement
+            const y = (window.innerHeight - e.pageY * 1) / 120;
+            bg.style.transform = `translate(${x}px, ${y}px) scale(1.05)`; // Slower drift
+        });
     </script>
 </body>
 </html>
