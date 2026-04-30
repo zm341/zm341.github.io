@@ -7,14 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        /* Color Palette & Variables */
         :root {
             --bg-pure-white: #ffffff;
             --bg-cream: #fafafa;
-            --mint-light: #e0f2f1; /* Light sky mist */
-            --fern-green: #2e7d32; /* Rich accounting integrity green */
-            --moss-subtle: #81c784; /* Soft highlights */
-            --slate-gray: #37474f; /* Modern text */
+            --mint-light: #e0f2f1;
+            --fern-green: #2e7d32;
+            --moss-subtle: #81c784;
+            --slate-gray: #37474f;
             --text-main: #2c3e50;
             --text-dim: #607d8b;
             --glass-white: rgba(255, 255, 255, 0.8);
@@ -23,7 +22,6 @@
             --shadow-moss: 0 5px 20px rgba(129, 199, 132, 0.1);
         }
 
-        /* Reset & Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -82,7 +80,7 @@
         }
 
         .logo::before {
-            content: '🌿'; /* Subtle nature icon */
+            content: '🌿';
             margin-right: 8px;
             font-size: 1.1rem;
         }
@@ -100,14 +98,13 @@
             position: relative;
         }
 
-        /* Profile Image Container - Nature Edition */
         .profile-container {
             width: 210px;
             height: 210px;
             margin-bottom: 2.5rem;
             position: relative;
             border-radius: 50%;
-            padding: 8px; /* Frame space */
+            padding: 8px;
             background: linear-gradient(135deg, var(--mint-light), #fff, var(--moss-subtle));
             box-shadow: 0 10px 40px rgba(129, 199, 132, 0.15);
             transition: transform 0.4s ease;
@@ -122,7 +119,7 @@
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
-            border: 5px solid #fff; /* Internal white border */
+            border: 5px solid #fff;
             display: block;
         }
 
@@ -149,7 +146,7 @@
             font-weight: 400;
         }
 
-        /* Buttons (Moss Glow) */
+        /* Buttons */
         .cta-btn {
             padding: 16px 38px;
             background: var(--fern-green);
@@ -163,6 +160,7 @@
             font-size: 0.85rem;
             border: none;
             box-shadow: 0 5px 20px rgba(46, 125, 50, 0.2);
+            display: inline-block;
         }
 
         .cta-btn:hover {
@@ -171,17 +169,17 @@
             box-shadow: 0 10px 30px rgba(129, 199, 132, 0.3);
         }
 
-        /* Sections, Titles, Grids */
+        /* Sections */
         section {
-            padding: 120px 10%;
+            padding: 100px 10%;
             background-color: var(--bg-pure-white);
         }
 
-        #expertise, #experience {
+        #expertise, #experience, #projects {
             background-color: var(--bg-cream);
-            border-radius: 60px; /* Curvature for nature */
+            border-radius: 60px;
             margin: 40px 10%;
-            padding: 120px 5%;
+            padding: 100px 5%;
         }
 
         .section-title {
@@ -210,7 +208,7 @@
             gap: 2.5rem;
         }
 
-        /* Cards (Light, Organic Glow) */
+        /* Cards */
         .card {
             background: #fff;
             border: 1px solid var(--glass-border);
@@ -223,24 +221,9 @@
         }
 
         .card:hover {
-            transform: translateY(-15px) scale(1.02);
+            transform: translateY(-15px);
             border-color: var(--moss-subtle);
             box-shadow: var(--shadow-moss);
-        }
-
-        /* Decorative Leaf (Micro-interaction) */
-        .card::after {
-            content: '🍃';
-            position: absolute;
-            bottom: -20px;
-            right: -20px;
-            font-size: 3rem;
-            opacity: 0.03;
-            transition: opacity 0.4s ease;
-        }
-
-        .card:hover::after {
-            opacity: 0.1;
         }
 
         .card h3 {
@@ -250,11 +233,6 @@
             font-weight: 700;
         }
 
-        .card p, .card ul {
-            color: var(--text-dim);
-            font-size: 1rem;
-        }
-
         .tag {
             display: inline-block;
             background: var(--mint-light);
@@ -262,47 +240,22 @@
             padding: 6px 15px;
             border-radius: 20px;
             font-size: 0.8rem;
-            margin-right: 10px;
             margin-bottom: 12px;
             font-weight: 700;
             text-transform: uppercase;
         }
 
-        /* Accounting List Style */
-        .accounting-list {
-            margin-top: 20px;
-            list-style-type: none;
-        }
-
-        .accounting-list li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 10px;
-        }
-
-        .accounting-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--moss-subtle);
-            font-weight: 800;
-        }
-
-        /* Footer */
         footer {
             padding: 60px 10%;
             text-align: center;
-            border-top: 1px solid var(--glass-border);
             color: var(--text-dim);
             background-color: var(--bg-cream);
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.6rem; }
+            .hero h1 { font-size: 2.5rem; }
             nav { padding: 1rem 5%; }
-            .profile-container { width: 170px; height: 170px; }
-            .section-title { font-size: 2.2rem; }
-            #expertise, #experience { margin: 20px 5%; padding: 80px 5%; }
+            #expertise, #experience, #projects { margin: 20px 5%; padding: 60px 5%; }
         }
     </style>
 </head>
@@ -312,24 +265,43 @@
 
     <nav>
         <div class="logo">RU_ACCOUNTING</div>
-        <div style="color: var(--fern-green); font-size: 0.9rem; font-weight: 600;">Rutgers Junior • Class of 2027</div>
+        <div style="color: var(--fern-green); font-size: 0.9rem; font-weight: 600;">Rutgers Junior • 2027</div>
     </nav>
 
     <header class="hero">
         <div class="profile-container" data-aos="zoom-in" data-aos-duration="1200">
-            <img src="Assets/ProfilePicture.JPG" alt="Professional Headshot" class="profile-img">
+            <img src="Assets/ProfilePicture.JPG" alt="Profile Headshot" class="profile-img">
         </div>
-        <h1 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">Building <span>Financial Precision</span> with Passion.</h1>
-        <p data-aos="fade-up" data-aos-delay="500">Junior Accounting Major at Rutgers University–New Brunswick. Leveraging advanced analytics and GAAP expertise to drive organizational transparency.</p>
+        <h1 data-aos="fade-up" data-aos-delay="200">Building <span>Financial Precision</span> with Passion.</h1>
+        <p data-aos="fade-up" data-aos-delay="500">Junior Accounting Major at Rutgers University–New Brunswick. Bridging the gap between technical accounting expertise and modern digital logic.</p>
         <div data-aos="fade-up" data-aos-delay="700">
             <a href="#" class="cta-btn">Download Resume</a>
         </div>
     </header>
 
+    <section id="projects">
+        <h2 class="section-title" data-aos="fade-right">Digital Trailblazing</h2>
+        <div class="grid">
+            <div class="card" data-aos="zoom-in-up" style="grid-column: 1 / -1; text-align: center;">
+                <div class="tag">GitHub Development</div>
+                <h3>ISC Study App</h3>
+                <p style="margin: 1.5rem auto; max-width: 700px; color: var(--text-dim);">
+                    Accounting requires precision and a commitment to continuous learning. 
+                    I developed this application to streamline [describe app's purpose, e.g., information systems concepts], 
+                    showcasing my ability to organize complex data into user-friendly digital experiences.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <a href="https://github.com/zm341/ISCStudyApp" target="_blank" class="cta-btn" style="background: var(--slate-gray);">Source Code</a>
+                    <a href="https://zm341.github.io/apps/ISCStudyApp" target="_blank" class="cta-btn">Launch Application 🍃</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="about">
         <h2 class="section-title" data-aos="fade-right">The Mission</h2>
         <div class="card" data-aos="fade-up">
-            <p style="font-size: 1.15rem; color: var(--text-dim); line-height: 1.9; font-weight: 400;">As a Junior at the Rutgers Business School, I view accounting as the foundation of sustainable growth. My focus is on transforming raw fiscal data into actionable insights. Currently pursuing a CPA track with a commitment to integrity, precision, and the "celebration" of business vitality through clear financial storytelling.</p>
+            <p style="font-size: 1.15rem; color: var(--text-dim); line-height: 1.9;">As a Junior at the Rutgers Business School, I view accounting as the foundation of sustainable growth. My focus is on transforming raw fiscal data into actionable insights through integrity, GAAP compliance, and a technical-first mindset.</p>
         </div>
     </section>
 
@@ -339,40 +311,23 @@
             <div class="card" data-aos="flip-left" data-aos-delay="100">
                 <div class="tag">Analysis</div>
                 <h3>Excel Mastery</h3>
-                <p>Utilizing Pivot Tables, Power Query, and advanced lookups to streamline reporting and auditing processes.</p>
+                <p>Expertise in Pivot Tables and advanced modeling to streamline financial auditing.</p>
             </div>
             <div class="card" data-aos="flip-left" data-aos-delay="200">
                 <div class="tag">Standards</div>
                 <h3>GAAP Expertise</h3>
-                <p>Strong foundation in financial reporting, revenue recognition, and ethical accounting standards.</p>
-            </div>
-            <div class="card" data-aos="flip-left" data-aos-delay="300">
-                <div class="tag">Innovation</div>
-                <h3>Data Analytics</h3>
-                <p>Leveraging digital tools to identify trends, mitigate risks, and enhance internal control systems.</p>
+                <p>Ensuring every step is documented and every trail is compliant with reporting standards.</p>
             </div>
         </div>
     </section>
 
     <section id="experience">
-        <h2 class="section-title" data-aos="fade-right">Academic Portfolio</h2>
+        <h2 class="section-title" data-aos="fade-right">Academic Journey</h2>
         <div class="grid">
-            <div class="card" data-aos="fade-left">
-                <div class="tag">Education</div>
-                <h3>Rutgers Business School</h3>
-                <p>Junior Year | B.S. in Accounting</p>
-                <ul class="accounting-list">
-                    <li>Intermediate Accounting Series</li>
-                    <li>Cost Accounting & Financial Management</li>
-                    <li>Rutgers Accounting Society Member</li>
-                    <li>GPA: [Insert GPA Placeholder]</li>
-                </ul>
-            </div>
-            <div class="card" data-aos="fade-right">
-                <div class="tag">Service</div>
-                <h3>VITA Program</h3>
-                <p>Tax Prep Volunteer</p>
-                <p style="margin-top: 15px;">Ensuring compliance and accuracy for local community tax filings while adhering to strict IRS standards.</p>
+            <div class="card" data-aos="fade-up">
+                <h3>Rutgers University</h3>
+                <p>B.S. in Accounting | Junior Year</p>
+                <p style="margin-top: 1rem; color: var(--text-dim);">Actively engaged in the Rutgers Accounting Society and maintaining a commitment to academic excellence in Intermediate Accounting coursework.</p>
             </div>
         </div>
     </section>
@@ -384,20 +339,12 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialize Animations
-        AOS.init({
-            duration: 1000,
-            once: false,
-            mirror: true,
-            easing: 'ease-out-cubic' // Softer easing
-        });
-
-        // Soft, Misty Background Parallax Effect
+        AOS.init({ duration: 1000, once: false, mirror: true });
         document.addEventListener('mousemove', (e) => {
             const bg = document.querySelector('.living-bg');
-            const x = (window.innerWidth - e.pageX * 1) / 120; // Subtle movement
-            const y = (window.innerHeight - e.pageY * 1) / 120;
-            bg.style.transform = `translate(${x}px, ${y}px) scale(1.05)`; // Slower drift
+            const x = (window.innerWidth - e.pageX) / 100;
+            const y = (window.innerHeight - e.pageY) / 100;
+            bg.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
         });
     </script>
 </body>
