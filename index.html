@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,17 +72,43 @@
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 0 10%;
+            padding: 120px 10% 60px 10%;
+        }
+
+        .profile-container {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 2rem;
+            position: relative;
+            border-radius: 50%;
+            padding: 6px;
+            background: linear-gradient(45deg, var(--emerald), transparent, var(--emerald));
+            box-shadow: 0 0 40px rgba(46, 204, 113, 0.25);
+            animation: profileGlow 4s infinite alternate;
+        }
+
+        @keyframes profileGlow {
+            0% { box-shadow: 0 0 20px rgba(46, 204, 113, 0.2); }
+            100% { box-shadow: 0 0 50px rgba(46, 204, 113, 0.5); }
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--bg-black);
+            display: block;
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-size: clamp(2.2rem, 7vw, 4.5rem);
             line-height: 1.1;
             margin-bottom: 1.5rem;
             font-weight: 800;
@@ -96,7 +121,7 @@
 
         .hero p {
             color: var(--text-dim);
-            max-width: 600px;
+            max-width: 650px;
             font-size: 1.1rem;
             margin-bottom: 2rem;
         }
@@ -194,8 +219,9 @@
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 3rem; }
+            .hero h1 { font-size: 2.5rem; }
             nav { padding: 1rem 5%; }
+            .profile-container { width: 160px; height: 160px; }
         }
     </style>
 </head>
@@ -205,68 +231,71 @@
 
     <nav>
         <div class="logo">RU_ACCOUNTING</div>
-        <div style="color: var(--text-dim); font-size: 0.9rem;">Class of 2027</div>
+        <div style="color: var(--text-dim); font-size: 0.9rem;">Rutgers University-NB</div>
     </nav>
 
     <header class="hero">
-        <h1 data-aos="zoom-out-up" data-aos-duration="1200">Building <span>Financial Accuracy</span> with Passion.</h1>
-        <p data-aos="fade-up" data-aos-delay="400">Junior Accounting Major at Rutgers University–New Brunswick. Specializing in audit readiness, GAAP compliance, and advanced financial modeling.</p>
-        <div data-aos="fade-up" data-aos-delay="600">
+        <div class="profile-container" data-aos="zoom-in" data-aos-duration="1000">
+            <img src="ProfilePicture.jpeg" alt="Professional Headshot" class="profile-img">
+        </div>
+        <h1 data-aos="zoom-out-up" data-aos-duration="1200" data-aos-delay="200">Building <span>Financial Precision</span> with Passion.</h1>
+        <p data-aos="fade-up" data-aos-delay="500">Junior Accounting Major at Rutgers University–New Brunswick. Leveraging advanced analytics and GAAP expertise to drive organizational transparency.</p>
+        <div data-aos="fade-up" data-aos-delay="700">
             <a href="#" class="cta-btn">Download Resume</a>
         </div>
     </header>
 
     <section id="about">
-        <h2 class="section-title" data-aos="fade-right">Professional Bio</h2>
+        <h2 class="section-title" data-aos="fade-right">The Mission</h2>
         <div class="card" data-aos="fade-up">
-            <p style="font-size: 1.1rem; color: var(--text-dim);">As a Junior at Rutgers, I bridge the gap between academic excellence and real-world fiscal responsibility. I view accounting not just as numbers, but as the "Celebration of Life" within a business—the vital pulse that ensures growth and sustainability. Currently maintaining a competitive GPA while engaging in the Rutgers Accounting Society and pursuing internship opportunities in Public Accounting.</p>
+            <p style="font-size: 1.1rem; color: var(--text-dim); line-height: 1.8;">As a Junior at the Rutgers Business School, I view accounting as the foundation of sustainable growth. My focus is on transforming raw fiscal data into actionable insights. Currently pursuing a CPA track with a commitment to integrity, precision, and the "celebration" of business vitality through clear financial storytelling.</p>
         </div>
     </section>
 
     <section id="expertise">
-        <h2 class="section-title" data-aos="fade-right">Competencies</h2>
+        <h2 class="section-title" data-aos="fade-right">Technical Arsenal</h2>
         <div class="grid">
             <div class="card" data-aos="flip-up" data-aos-delay="100">
-                <div class="tag">Technical</div>
-                <h3>Advanced Excel</h3>
-                <p style="color: var(--text-dim);">Expert in Pivot Tables, VLOOKUP/XLOOKUP, and complex financial modeling for predictive analysis.</p>
+                <div class="tag">Analysis</div>
+                <h3>Excel Mastery</h3>
+                <p style="color: var(--text-dim);">Utilizing Pivot Tables, Power Query, and advanced lookups to streamline reporting and auditing processes.</p>
             </div>
             <div class="card" data-aos="flip-up" data-aos-delay="200">
-                <div class="tag">Regulatory</div>
-                <h3>GAAP Standards</h3>
-                <p style="color: var(--text-dim);">Deep understanding of Generally Accepted Accounting Principles and financial reporting frameworks.</p>
+                <div class="tag">Standards</div>
+                <h3>GAAP Expertise</h3>
+                <p style="color: var(--text-dim);">Strong foundation in financial reporting, revenue recognition, and ethical accounting standards.</p>
             </div>
             <div class="card" data-aos="flip-up" data-aos-delay="300">
-                <div class="tag">Analytical</div>
-                <h3>Audit Prep</h3>
-                <p style="color: var(--text-dim);">Experience in analyzing ledgers and reconciling accounts to ensure high-integrity audit trails.</p>
+                <div class="tag">Innovation</div>
+                <h3>Data Analytics</h3>
+                <p style="color: var(--text-dim);">Leveraging digital tools to identify trends, mitigate risks, and enhance internal control systems.</p>
             </div>
         </div>
     </section>
 
     <section id="experience">
-        <h2 class="section-title" data-aos="fade-right">Academic Journey</h2>
+        <h2 class="section-title" data-aos="fade-right">Academic Portfolio</h2>
         <div class="grid">
             <div class="card" data-aos="fade-left">
                 <h3>Rutgers Business School</h3>
-                <p>Junior Year - Accounting Major</p>
-                <ul style="margin-top: 15px; color: var(--text-dim); list-style-position: inside;">
-                    <li>Relevant Coursework: Intermediate Accounting I & II, Cost Accounting</li>
-                    <li>Active Member: Rutgers Accounting Society</li>
-                    <li>Dean's List Recognition</li>
+                <p>Junior Year | B.S. in Accounting</p>
+                <ul style="margin-top: 15px; color: var(--text-dim); list-style-position: inside; line-height: 2;">
+                    <li>Intermediate Accounting Series</li>
+                    <li>Cost Accounting & Financial Management</li>
+                    <li>Rutgers Accounting Society Member</li>
                 </ul>
             </div>
             <div class="card" data-aos="fade-right">
-                <h3>VITA Volunteer (Placeholder)</h3>
-                <p>Volunteer Income Tax Assistance</p>
-                <p style="color: var(--text-dim); margin-top: 10px;">Assisting low-income community members with tax preparation while ensuring 100% compliance with IRS guidelines.</p>
+                <h3>VITA Program (Placeholder)</h3>
+                <p>Tax Prep Volunteer</p>
+                <p style="color: var(--text-dim); margin-top: 10px;">Ensuring compliance and accuracy for local community tax filings while adhering to strict IRS standards.</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 | Rutgers New Brunswick Accounting Portfolio</p>
-        <p style="font-size: 0.8rem; margin-top: 10px; color: var(--emerald);">Crafting Financial Clarity</p>
+        <p>&copy; 2026 | Professional Accounting Portfolio</p>
+        <p style="font-size: 0.8rem; margin-top: 10px; color: var(--emerald);">Jersey Roots, Global Reach.</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -279,14 +308,13 @@
             easing: 'ease-out-back'
         });
 
-        // Mouse movement parallax effect for breathing background
+        // Interactive background parallax
         document.addEventListener('mousemove', (e) => {
             const bg = document.querySelector('.living-bg');
-            const x = e.clientX / window.innerWidth;
-            const y = e.clientY / window.innerHeight;
-            bg.style.transform = `translate(${x * 20}px, ${y * 20}px) scale(1.1)`;
+            const x = (window.innerWidth - e.pageX * 2) / 100;
+            const y = (window.innerHeight - e.pageY * 2) / 100;
+            bg.style.transform = `translate(${x}px, ${y}px) scale(1.1)`;
         });
     </script>
 </body>
 </html>
-```
