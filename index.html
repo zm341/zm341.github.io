@@ -3,49 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accounting Portfolio | Rutgers New Brunswick</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>Accounting Portfolio | Professional Explorer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         :root {
-            --bg-black: #0a0a0a;
-            --emerald: #2ecc71;
-            --deep-forest: #1b4d3e;
-            --text-main: #ffffff;
-            --text-dim: #a0a0a0;
-            --glass: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(46, 204, 113, 0.2);
+            --forest-deep: #1b4332;
+            --leaf-bright: #74b816;
+            --slate: #2d3436;
+            --mist: rgba(255, 255, 255, 0.05);
+            --earth-black: #0f1412;
+            --text-white: #f8f9fa;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-black);
-            color: var(--text-main);
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--earth-black);
+            color: var(--text-white);
             overflow-x: hidden;
         }
 
-        /* Animated Breathing Background */
-        .living-bg {
+        /* Misty Animated Background */
+        .mist-container {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
             z-index: -1;
-            background: radial-gradient(circle at 50% 50%, var(--deep-forest) 0%, var(--bg-black) 80%);
-            animation: breathe 10s infinite alternate ease-in-out;
+            background: linear-gradient(135deg, #0f1412 0%, #1b4332 100%);
+            overflow: hidden;
         }
 
-        @keyframes breathe {
-            0% { transform: scale(1); opacity: 0.4; }
-            100% { transform: scale(1.15); opacity: 0.7; }
+        .mist-layer {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(116, 184, 22, 0.05) 0%, transparent 50%);
+            animation: drift 20s infinite alternate ease-in-out;
+        }
+
+        @keyframes drift {
+            from { transform: translate(-10%, -10%); }
+            to { transform: translate(10%, 10%); }
         }
 
         /* Navigation */
@@ -56,46 +58,33 @@
             padding: 1.5rem 10%;
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(15px);
             z-index: 1000;
-            border-bottom: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        .logo {
-            font-weight: 800;
-            font-size: 1.2rem;
-            color: var(--emerald);
-            letter-spacing: -1px;
-        }
+        .logo { font-weight: 900; color: var(--leaf-bright); letter-spacing: 2px; }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 120px 10% 60px 10%;
+            padding: 0 10%;
         }
 
-        .profile-container {
-            width: 200px;
-            height: 200px;
-            margin-bottom: 2rem;
-            position: relative;
+        .profile-frame {
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
-            padding: 6px;
-            background: linear-gradient(45deg, var(--emerald), transparent, var(--emerald));
-            box-shadow: 0 0 40px rgba(46, 204, 113, 0.25);
-            animation: profileGlow 4s infinite alternate;
-        }
-
-        @keyframes profileGlow {
-            0% { box-shadow: 0 0 20px rgba(46, 204, 113, 0.2); }
-            100% { box-shadow: 0 0 50px rgba(46, 204, 113, 0.5); }
+            padding: 8px;
+            background: var(--slate);
+            border: 2px solid var(--leaf-bright);
+            margin-bottom: 2rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
         }
 
         .profile-img {
@@ -103,218 +92,111 @@
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
-            border: 4px solid var(--bg-black);
-            display: block;
+            filter: grayscale(20%);
         }
 
-        .hero h1 {
-            font-size: clamp(2.2rem, 7vw, 4.5rem);
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            font-weight: 800;
-        }
-
-        .hero span {
-            color: var(--emerald);
-            text-shadow: 0 0 20px rgba(46, 204, 113, 0.4);
-        }
-
-        .hero p {
-            color: var(--text-dim);
-            max-width: 650px;
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-        }
+        .hero h1 { font-size: clamp(2rem, 6vw, 4rem); margin-bottom: 1rem; text-transform: uppercase; }
+        .hero span { color: var(--leaf-bright); }
+        .hero p { color: #bdc3c7; max-width: 600px; margin-bottom: 2rem; }
 
         /* Buttons */
-        .cta-btn {
-            padding: 15px 35px;
-            background: transparent;
-            border: 2px solid var(--emerald);
-            color: var(--emerald);
+        .btn {
+            padding: 12px 30px;
+            border: 2px solid var(--leaf-bright);
+            color: var(--leaf-bright);
             text-decoration: none;
-            font-weight: 600;
-            border-radius: 5px;
-            transition: all 0.3s ease;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: 0.4s;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 0.8rem;
         }
 
-        .cta-btn:hover {
-            background: var(--emerald);
-            color: var(--bg-black);
-            box-shadow: 0 0 30px var(--emerald);
-            transform: scale(1.05);
+        .btn:hover {
+            background: var(--leaf-bright);
+            color: var(--earth-black);
+            box-shadow: 0 0 20px rgba(116, 184, 22, 0.4);
         }
 
-        /* Sections & Grids */
-        section {
-            padding: 100px 10%;
-        }
+        /* Sections */
+        section { padding: 100px 10%; }
+        .section-title { font-size: 2rem; margin-bottom: 3rem; border-left: 5px solid var(--leaf-bright); padding-left: 20px; }
 
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 50px;
-            height: 4px;
-            background: var(--emerald);
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        /* Cards */
         .card {
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            padding: 2.5rem;
-            border-radius: 15px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 20px;
+            transition: 0.4s;
+            margin-bottom: 20px;
         }
 
         .card:hover {
-            transform: translateY(-12px);
-            border-color: var(--emerald);
-            box-shadow: 0 10px 40px rgba(46, 204, 113, 0.15);
+            background: rgba(116, 184, 22, 0.05);
+            transform: translateY(-5px);
+            border-color: var(--leaf-bright);
         }
 
-        .card h3 {
-            color: var(--emerald);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
+        .card h3 { color: var(--leaf-bright); margin-bottom: 10px; }
 
-        .tag {
-            display: inline-block;
-            background: var(--deep-forest);
-            color: var(--emerald);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-right: 8px;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
+        footer { text-align: center; padding: 50px; opacity: 0.5; font-size: 0.8rem; }
 
-        /* Footer */
-        footer {
-            padding: 50px 10%;
-            text-align: center;
-            border-top: 1px solid var(--glass-border);
-            color: var(--text-dim);
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            nav { padding: 1rem 5%; }
-            .profile-container { width: 160px; height: 160px; }
-        }
     </style>
 </head>
 <body>
 
-    <div class="living-bg"></div>
+    <div class="mist-container">
+        <div class="mist-layer"></div>
+    </div>
 
     <nav>
-        <div class="logo">RU_ACCOUNTING</div>
-        <div style="color: var(--text-dim); font-size: 0.9rem;">Rutgers University-NB</div>
+        <div class="logo">TRAILHEAD_ACC</div>
+        <div style="font-size: 0.8rem;">Rutgers Junior • Class of 2027</div>
     </nav>
 
     <header class="hero">
-        <div class="profile-container" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="profile-frame" data-aos="zoom-in">
             <img src="Assets/ProfilePicture.JPG" alt="Professional Headshot" class="profile-img">
         </div>
-        <h1 data-aos="zoom-out-up" data-aos-duration="1200" data-aos-delay="200">Building <span>Financial Precision</span> with Passion.</h1>
-        <p data-aos="fade-up" data-aos-delay="500">Junior Accounting Major at Rutgers University–New Brunswick. Leveraging advanced analytics and GAAP expertise to drive organizational transparency.</p>
-        <div data-aos="fade-up" data-aos-delay="700">
-            <a href="#" class="cta-btn">Download Resume</a>
+        <h1 data-aos="fade-up">Navigating <span>Financial Landscapes</span>.</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Junior Accounting Major at Rutgers University–New Brunswick. Finding the clear path through complex data with the precision of a seasoned hiker.</p>
+        <div data-aos="fade-up" data-aos-delay="400">
+            <a href="#" class="btn">View My Trailmap (Resume)</a>
         </div>
     </header>
 
     <section id="about">
-        <h2 class="section-title" data-aos="fade-right">The Mission</h2>
+        <h2 class="section-title" data-aos="fade-right">The Compass</h2>
         <div class="card" data-aos="fade-up">
-            <p style="font-size: 1.1rem; color: var(--text-dim); line-height: 1.8;">As a Junior at the Rutgers Business School, I view accounting as the foundation of sustainable growth. My focus is on transforming raw fiscal data into actionable insights. Currently pursuing a CPA track with a commitment to integrity, precision, and the "celebration" of business vitality through clear financial storytelling.</p>
+            <p>Accounting is more than just balance sheets—it's about finding the peak of organizational efficiency. As a Rutgers Junior, I combine my passion for the outdoors with my dedication to GAAP integrity. Just as every trail requires a map, every business requires transparent, accurate financial storytelling.</p>
         </div>
     </section>
 
-    <section id="expertise">
-        <h2 class="section-title" data-aos="fade-right">Technical Arsenal</h2>
-        <div class="grid">
-            <div class="card" data-aos="flip-up" data-aos-delay="100">
-                <div class="tag">Analysis</div>
-                <h3>Excel Mastery</h3>
-                <p style="color: var(--text-dim);">Utilizing Pivot Tables, Power Query, and advanced lookups to streamline reporting and auditing processes.</p>
+    <section id="skills">
+        <h2 class="section-title" data-aos="fade-right">Gear & Tools</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+            <div class="card" data-aos="fade-up">
+                <h3>Excel Analytics</h3>
+                <p>Mastering the "terrain" of data with Pivot Tables and advanced modeling.</p>
             </div>
-            <div class="card" data-aos="flip-up" data-aos-delay="200">
-                <div class="tag">Standards</div>
-                <h3>GAAP Expertise</h3>
-                <p style="color: var(--text-dim);">Strong foundation in financial reporting, revenue recognition, and ethical accounting standards.</p>
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <h3>Audit Readiness</h3>
+                <p>Ensuring every step is documented and every trail is compliant with GAAP standards.</p>
             </div>
-            <div class="card" data-aos="flip-up" data-aos-delay="300">
-                <div class="tag">Innovation</div>
-                <h3>Data Analytics</h3>
-                <p style="color: var(--text-dim);">Leveraging digital tools to identify trends, mitigate risks, and enhance internal control systems.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience">
-        <h2 class="section-title" data-aos="fade-right">Academic Portfolio</h2>
-        <div class="grid">
-            <div class="card" data-aos="fade-left">
-                <h3>Rutgers Business School</h3>
-                <p>Junior Year | B.S. in Accounting</p>
-                <ul style="margin-top: 15px; color: var(--text-dim); list-style-position: inside; line-height: 2;">
-                    <li>Intermediate Accounting Series</li>
-                    <li>Cost Accounting & Financial Management</li>
-                    <li>Rutgers Accounting Society Member</li>
-                </ul>
-            </div>
-            <div class="card" data-aos="fade-right">
-                <h3>VITA Program</h3>
-                <p>Tax Prep Volunteer</p>
-                <p style="color: var(--text-dim); margin-top: 10px;">Ensuring compliance and accuracy for local community tax filings while adhering to strict IRS standards.</p>
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+                <h3>Fiscal Stewardship</h3>
+                <p>A commitment to long-term sustainability and financial growth.</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 | Professional Accounting Portfolio</p>
-        <p style="font-size: 0.8rem; margin-top: 10px; color: var(--emerald);">Jersey Roots, Global Reach.</p>
+        <p>&copy; 2026 | Built for the Long Haul | Rutgers New Brunswick</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialize Animations
-        AOS.init({
-            duration: 1000,
-            once: false,
-            mirror: true,
-            easing: 'ease-out-back'
-        });
-
-        // Interactive background parallax
-        document.addEventListener('mousemove', (e) => {
-            const bg = document.querySelector('.living-bg');
-            const x = (window.innerWidth - e.pageX * 2) / 100;
-            const y = (window.innerHeight - e.pageY * 2) / 100;
-            bg.style.transform = `translate(${x}px, ${y}px) scale(1.1)`;
-        });
+        AOS.init({ duration: 1000, once: false });
     </script>
 </body>
 </html>
