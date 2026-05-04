@@ -37,7 +37,7 @@
             line-height: 1.6;
         }
 
-        /* Animated Breathing Background (Misty Air) */
+        /* Animated Breathing Background */
         .living-bg {
             position: fixed;
             top: 0;
@@ -67,7 +67,6 @@
             backdrop-filter: blur(20px);
             z-index: 1000;
             border-bottom: 1px solid rgba(129, 199, 132, 0.1);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
         }
 
         .logo {
@@ -79,11 +78,7 @@
             align-items: center;
         }
 
-        .logo::before {
-            content: '🌿';
-            margin-right: 8px;
-            font-size: 1.1rem;
-        }
+        .logo::before { content: '🌿'; margin-right: 8px; font-size: 1.1rem; }
 
         /* Hero Section */
         .hero {
@@ -95,23 +90,17 @@
             text-align: center;
             padding: 120px 10% 60px 10%;
             background: linear-gradient(to bottom, var(--bg-pure-white) 0%, var(--bg-cream) 100%);
-            position: relative;
         }
 
         .profile-container {
-            width: 210px;
-            height: 210px;
-            margin-bottom: 2.5rem;
+            width: 180px;
+            height: 180px;
+            margin-bottom: 2rem;
             position: relative;
             border-radius: 50%;
             padding: 8px;
             background: linear-gradient(135deg, var(--mint-light), #fff, var(--moss-subtle));
-            box-shadow: 0 10px 40px rgba(129, 199, 132, 0.15);
-            transition: transform 0.4s ease;
-        }
-
-        .profile-container:hover {
-            transform: scale(1.03) rotate(2deg);
+            box-shadow: var(--shadow-moss);
         }
 
         .profile-img {
@@ -119,162 +108,91 @@
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
-            border: 5px solid #fff;
-            display: block;
+            border: 4px solid #fff;
         }
 
-        .hero h1 {
-            font-size: clamp(2rem, 6vw, 4rem);
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            font-weight: 800;
-            color: var(--text-main);
-        }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: 1rem; }
+        .hero span { color: var(--fern-green); }
 
-        .hero span {
-            color: var(--fern-green);
-            background: linear-gradient(to bottom right, var(--fern-green), var(--moss-subtle));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            color: var(--text-dim);
-            max-width: 650px;
-            font-size: 1.1rem;
-            margin-bottom: 2.5rem;
-            font-weight: 400;
-        }
-
-        /* Buttons */
+        /* General UI Elements */
         .cta-btn {
-            padding: 16px 38px;
+            padding: 12px 28px;
             background: var(--fern-green);
             color: #fff;
             text-decoration: none;
             font-weight: 700;
             border-radius: 50px;
-            transition: all 0.4s ease;
+            transition: 0.3s;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-size: 0.85rem;
             border: none;
-            box-shadow: 0 5px 20px rgba(46, 125, 50, 0.2);
-            display: inline-block;
+            cursor: pointer;
         }
 
-        .cta-btn:hover {
-            background: var(--moss-subtle);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(129, 199, 132, 0.3);
-        }
+        .cta-btn:hover { background: var(--moss-subtle); transform: translateY(-3px); }
 
-        /* Sections */
-        section {
-            padding: 100px 10%;
-            background-color: var(--bg-pure-white);
-        }
-
-        #expertise, #experience, #projects {
+        section { padding: 80px 10%; }
+        
+        #projects-grid {
             background-color: var(--bg-cream);
-            border-radius: 60px;
-            margin: 40px 10%;
-            padding: 100px 5%;
+            border-radius: 50px;
+            margin: 20px 5%;
         }
 
         .section-title {
-            font-size: 2.8rem;
-            margin-bottom: 4rem;
-            position: relative;
-            display: inline-block;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
             font-weight: 800;
-            color: var(--text-main);
+            border-left: 6px solid var(--moss-subtle);
+            padding-left: 20px;
         }
 
-        .section-title::before {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 0;
-            width: 70px;
-            height: 6px;
-            background: var(--moss-subtle);
-            border-radius: 10px;
-        }
-
-        .grid {
+        /* Responsive Grid for Apps */
+        .app-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
         }
 
-        /* Cards */
         .card {
             background: #fff;
             border: 1px solid var(--glass-border);
-            padding: 3rem;
+            padding: 2rem;
             border-radius: 25px;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            position: relative;
-            overflow: hidden;
             box-shadow: var(--shadow-light);
-        }
-
-        .card:hover {
-            transform: translateY(-15px);
-            border-color: var(--moss-subtle);
-            box-shadow: var(--shadow-moss);
-        }
-
-        .card h3 {
-            color: var(--fern-green);
-            margin-bottom: 1.2rem;
-            font-size: 1.6rem;
-            font-weight: 700;
+            text-align: center;
         }
 
         .tag {
             display: inline-block;
             background: var(--mint-light);
             color: var(--fern-green);
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-bottom: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-        
-        /* Iframe App Container */
-        .app-container {
-            width: 100%;
-            height: 550px;
-            border: 2px solid var(--moss-subtle);
+            padding: 5px 12px;
             border-radius: 15px;
-            margin-top: 2rem;
-            overflow: hidden;
-            box-shadow: var(--shadow-moss);
-            background: var(--bg-pure-white);
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-bottom: 15px;
         }
 
-        .app-iframe {
+        /* Iframe Container */
+        .app-window {
             width: 100%;
-            height: 100%;
-            border: none;
+            height: 450px;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            margin-top: 1.5rem;
+            background: #000; /* Backdrop for the game */
+            overflow: hidden;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
         }
 
-        footer {
-            padding: 60px 10%;
-            text-align: center;
-            color: var(--text-dim);
-            background-color: var(--bg-cream);
-        }
+        .app-window iframe { width: 100%; height: 100%; border: none; }
+
+        footer { text-align: center; padding: 40px; color: var(--text-dim); }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            nav { padding: 1rem 5%; }
-            #expertise, #experience, #projects { margin: 20px 5%; padding: 60px 5%; }
-            .app-container { height: 450px; }
+            .app-grid { grid-template-columns: 1fr; }
+            .app-window { height: 350px; }
         }
     </style>
 </head>
@@ -284,89 +202,69 @@
 
     <nav>
         <div class="logo">RU_ACCOUNTING</div>
-        <div style="color: var(--fern-green); font-size: 0.9rem; font-weight: 600;">Rutgers Junior • 2027</div>
+        <div style="font-size: 0.8rem; font-weight: 600;">Rutgers Junior • 2027</div>
     </nav>
 
     <header class="hero">
-        <div class="profile-container" data-aos="zoom-in" data-aos-duration="1200">
-            <img src="Assets/ProfilePicture.JPG" alt="Profile Headshot" class="profile-img">
+        <div class="profile-container" data-aos="zoom-in">
+            <img src="Assets/ProfilePicture.JPG" alt="Profile" class="profile-img">
         </div>
-        <h1 data-aos="fade-up" data-aos-delay="200">Building <span>Financial Precision</span> with Passion.</h1>
-        <p data-aos="fade-up" data-aos-delay="500">Junior Accounting Major at Rutgers University–New Brunswick. Bridging the gap between technical accounting expertise and modern digital logic.</p>
-        <div data-aos="fade-up" data-aos-delay="700">
-            <a href="#" class="cta-btn">Download Resume</a>
-        </div>
+        <h1 data-aos="fade-up">Precision in <span>Finance & Code</span>.</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Accounting Major at Rutgers Business School. Exploring the intersection of financial logic and interactive development.</p>
     </header>
 
-    <section id="projects">
+    <section id="projects-grid">
         <h2 class="section-title" data-aos="fade-right">Digital Trailblazing</h2>
-        <div class="grid">
-            <div class="card" data-aos="zoom-in-up" style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
-                <div class="tag">Embedded Application</div>
-                <h3>ISC Study App</h3>
-                <p style="margin: 1.5rem auto; max-width: 700px; color: var(--text-dim);">
-                    Accounting requires precision and a commitment to continuous learning. 
-                    I developed this application to streamline Information Systems concepts, 
-                    showcasing my ability to organize complex data into user-friendly digital experiences. 
-                    Test it out directly below!
+        
+        <div class="app-grid">
+            
+            <div class="card" data-aos="fade-up">
+                <div class="tag">Technical Logic</div>
+                <h3>ISC Study Application</h3>
+                <p style="font-size: 0.9rem; color: var(--text-dim); margin-bottom: 1rem;">
+                    A focused utility designed to streamline Information Systems concepts.
                 </p>
-                <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 1rem;">
-                    <a href="https://github.com/zm341/ISCStudyApp" target="_blank" class="cta-btn" style="background: var(--slate-gray); padding: 10px 25px; font-size: 0.75rem;">View Source Code</a>
-                </div>
+                <a href="https://github.com/zm341/ISCStudyApp" target="_blank" class="cta-btn" style="background: var(--slate-gray); padding: 8px 20px;">GitHub</a>
                 
-                <div class="app-container">
-                    <iframe src="https://zm341.github.io/apps/ISCStudyApp" title="ISC Study Application" class="app-iframe"></iframe>
+                <div class="app-window">
+                    <iframe src="https://zm341.github.io/apps/ISCStudyApp" title="ISC Study App"></iframe>
                 </div>
             </div>
+
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+                <div class="tag">Creative Interactive</div>
+                <h3>Retro Arcade Trivia</h3>
+                <p style="font-size: 0.9rem; color: var(--text-dim); margin-bottom: 1rem;">
+                    A Galaga-inspired trivia engine built to explore UI animations and JSON data handling.
+                </p>
+                <a href="https://github.com/zm341/RetroTriviaApp" target="_blank" class="cta-btn" style="background: var(--slate-gray); padding: 8px 20px;">GitHub</a>
+                
+                <div class="app-window">
+                    <iframe src="https://zm341.github.io/apps/RetroTriviaApp" title="Retro Trivia App"></iframe>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <section id="about">
         <h2 class="section-title" data-aos="fade-right">The Mission</h2>
-        <div class="card" data-aos="fade-up">
-            <p style="font-size: 1.15rem; color: var(--text-dim); line-height: 1.9;">As a Junior at the Rutgers Business School, I view accounting as the foundation of sustainable growth. My focus is on transforming raw fiscal data into actionable insights through integrity, GAAP compliance, and a technical-first mindset.</p>
-        </div>
-    </section>
-
-    <section id="expertise">
-        <h2 class="section-title" data-aos="fade-right">Technical Arsenal</h2>
-        <div class="grid">
-            <div class="card" data-aos="flip-left" data-aos-delay="100">
-                <div class="tag">Analysis</div>
-                <h3>Excel Mastery</h3>
-                <p>Expertise in Pivot Tables and advanced modeling to streamline financial auditing.</p>
-            </div>
-            <div class="card" data-aos="flip-left" data-aos-delay="200">
-                <div class="tag">Standards</div>
-                <h3>GAAP Expertise</h3>
-                <p>Ensuring every step is documented and every trail is compliant with reporting standards.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience">
-        <h2 class="section-title" data-aos="fade-right">Academic Journey</h2>
-        <div class="grid">
-            <div class="card" data-aos="fade-up">
-                <h3>Rutgers University</h3>
-                <p>B.S. in Accounting | Junior Year</p>
-                <p style="margin-top: 1rem; color: var(--text-dim);">Actively engaged in the Rutgers Accounting Society and maintaining a commitment to academic excellence in Intermediate Accounting coursework.</p>
-            </div>
+        <div class="card" style="text-align: left;">
+            <p>I view accounting as the foundation of sustainable growth. By leveraging tools like Excel, GAAP compliance, and custom web applications, I transform raw data into actionable insights with a technical-first mindset.</p>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 | Professional Accounting Portfolio | Rutgers New Brunswick</p>
-        <p style="font-size: 0.85rem; margin-top: 12px; color: var(--fern-green); font-weight: 600;">Rooted in Integrity, Growing Opportunities.</p>
+        <p>&copy; 2026 | Rutgers New Brunswick Accounting Portfolio</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: false, mirror: true });
+        AOS.init({ duration: 1000, once: false });
         document.addEventListener('mousemove', (e) => {
             const bg = document.querySelector('.living-bg');
-            const x = (window.innerWidth - e.pageX) / 100;
-            const y = (window.innerHeight - e.pageY) / 100;
+            const x = (window.innerWidth - e.pageX) / 120;
+            const y = (window.innerHeight - e.pageY) / 120;
             bg.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
         });
     </script>
