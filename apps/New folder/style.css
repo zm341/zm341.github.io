@@ -1,0 +1,222 @@
+:root {
+    --arcade-black: #050510;
+    --arcade-red: #ff003c;
+    --arcade-blue: #00e5ff;
+    --arcade-yellow: #ffea00;
+    --arcade-white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: var(--arcade-white);
+    font-family: 'Press Start 2P', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.arcade-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 100vh;
+    max-height: 800px;
+    border: 4px solid var(--arcade-blue);
+    background-color: var(--arcade-black);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Scrolling Stars Background Effect */
+.starfield {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background-image: 
+        radial-gradient(2px 2px at 10% 10%, white 100%, transparent),
+        radial-gradient(1px 1px at 30% 50%, rgba(255,255,255,0.7) 100%, transparent),
+        radial-gradient(2px 2px at 50% 20%, white 100%, transparent),
+        radial-gradient(1px 1px at 70% 80%, rgba(255,255,255,0.8) 100%, transparent),
+        radial-gradient(2px 2px at 90% 40%, white 100%, transparent),
+        radial-gradient(1px 1px at 20% 90%, white 100%, transparent),
+        radial-gradient(2px 2px at 80% 10%, rgba(255,255,255,0.5) 100%, transparent);
+    background-size: 200px 200px;
+    animation: starScroll 5s linear infinite;
+    z-index: 0;
+}
+
+@keyframes starScroll {
+    0% { transform: translateY(-50%); }
+    100% { transform: translateY(0%); }
+}
+
+#game-ui {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+}
+
+/* Heads Up Display (HUD) */
+.hud {
+    display: flex;
+    justify-content: space-between;
+    color: var(--arcade-red);
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+}
+
+.score-block {
+    text-align: center;
+}
+
+.score-text {
+    color: var(--arcade-white);
+    margin-top: 10px;
+}
+
+/* Screen Management */
+.screen {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.screen.active {
+    display: flex;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Start Screen Typography */
+.logo-text {
+    color: var(--arcade-yellow);
+    font-size: 2.2rem;
+    line-height: 1.5;
+    text-shadow: 4px 4px 0 var(--arcade-red);
+    margin-bottom: 40px;
+}
+
+.blink {
+    animation: blinker 1.2s linear infinite;
+    color: var(--arcade-blue);
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+/* Game Over Screen */
+.game-over-text {
+    color: var(--arcade-red);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.final-stats {
+    color: var(--arcade-white);
+    margin-bottom: 40px;
+    font-size: 1.2rem;
+}
+
+/* Arcade Buttons */
+.arcade-btn {
+    background-color: transparent;
+    color: var(--arcade-white);
+    border: 2px solid var(--arcade-white);
+    padding: 15px 20px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    outline: none;
+}
+
+.arcade-btn:hover {
+    background-color: var(--arcade-yellow);
+    color: var(--arcade-black);
+    border-color: var(--arcade-yellow);
+    box-shadow: 0 0 15px var(--arcade-yellow);
+}
+
+/* Trivia Layout */
+.enemy-fleet {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 15px;
+    animation: floatEnemy 2s ease-in-out infinite alternate;
+}
+
+@keyframes floatEnemy {
+    from { transform: translateX(-20px); }
+    to { transform: translateX(20px); }
+}
+
+.question-box {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid var(--arcade-blue);
+    padding: 25px;
+    margin-bottom: 30px;
+    width: 100%;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    width: 100%;
+}
+
+.btn-grid .arcade-btn {
+    font-size: 0.75rem;
+    text-align: left;
+    line-height: 1.4;
+}
+
+/* Correct/Wrong Feedback */
+.arcade-btn.correct {
+    background-color: #00ff00;
+    color: #000;
+    border-color: #00ff00;
+    box-shadow: 0 0 20px #00ff00;
+}
+
+.arcade-btn.wrong {
+    background-color: var(--arcade-red);
+    color: #fff;
+    border-color: var(--arcade-red);
+    box-shadow: 0 0 20px var(--arcade-red);
+}
+
+.player-zone {
+    margin-top: auto;
+    font-size: 2.5rem;
+}

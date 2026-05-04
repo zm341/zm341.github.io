@@ -1,0 +1,92 @@
+[
+    {
+        "question": "In the 1981 arcade classic 'Donkey Kong', what was Mario's original name?",
+        "answers": [
+            { "text": "Plumber", "correct": false },
+            { "text": "Jumpman", "correct": true },
+            { "text": "Luigi", "correct": false },
+            { "text": "Mr. Video", "correct": false }
+        ]
+    },
+    {
+        "question": "Which legendary video game developer created 'Galaga' in 1981?",
+        "answers": [
+            { "text": "Atari", "correct": false },
+            { "text": "Nintendo", "correct": false },
+            { "text": "Namco", "correct": true },
+            { "text": "Sega", "correct": false }
+        ]
+    },
+    {
+        "question": "What happens in 'Galaga' if your ship is captured by a Boss Galaga and you shoot the boss down?",
+        "answers": [
+            { "text": "You lose a life", "correct": false },
+            { "text": "You get a 'Dual Fighter' (two ships)", "correct": true },
+            { "text": "The game resets", "correct": false },
+            { "text": "You warp to the next level", "correct": false }
+        ]
+    },
+    {
+        "question": "What is the maximum achievable score in a 'perfect' game of Pac-Man (reaching the level 256 kill screen)?",
+        "answers": [
+            { "text": "3,333,360", "correct": true },
+            { "text": "9,999,990", "correct": false },
+            { "text": "1,000,000", "correct": false },
+            { "text": "255,255", "correct": false }
+        ]
+    },
+    {
+        "question": "Which 1978 arcade game was so popular in Japan that it was rumored to have caused a national shortage of 100-yen coins?",
+        "answers": [
+            { "text": "Asteroids", "correct": false },
+            { "text": "Space Invaders", "correct": true },
+            { "text": "Centipede", "correct": false },
+            { "text": "Pong", "correct": false }
+        ]
+    },
+    {
+        "question": "What is the correct sequence for the famous 'Konami Code'?",
+        "answers": [
+            { "text": "Up, Down, Left, Right, A, B, Start", "correct": false },
+            { "text": "Up, Up, Down, Down, Left, Right, Left, Right, B, A", "correct": true },
+            { "text": "A, B, A, C, A, B, B", "correct": false },
+            { "text": "Up, Up, Down, Down, A, B, Select, Start", "correct": false }
+        ]
+    },
+    {
+        "question": "Which 1981 arcade game featured a trackball controller and tasked players with shooting a giant segmented bug?",
+        "answers": [
+            { "text": "Millipede", "correct": false },
+            { "text": "Frogger", "correct": false },
+            { "text": "Centipede", "correct": true },
+            { "text": "Missile Command", "correct": false }
+        ]
+    },
+    {
+        "question": "Who is the main protagonist of 'The Legend of Zelda' series?",
+        "answers": [
+            { "text": "Zelda", "correct": false },
+            { "text": "Ganondorf", "correct": false },
+            { "text": "Epona", "correct": false },
+            { "text": "Link", "correct": true }
+        ]
+    },
+    {
+        "question": "Which company released the very first commercially successful arcade video game, 'Pong', in 1972?",
+        "answers": [
+            { "text": "Atari", "correct": true },
+            { "text": "Midway", "correct": false },
+            { "text": "Taito", "correct": false },
+            { "text": "Williams", "correct": false }
+        ]
+    },
+    {
+        "question": "In the game 'Q*bert', what happens when the main character gets hit by an enemy?",
+        "answers": [
+            { "text": "He explodes into pixels", "correct": false },
+            { "text": "He swears using comic book symbols", "correct": true },
+            { "text": "He falls off the pyramid", "correct": false },
+            { "text": "He turns into a snake", "correct": false }
+        ]
+    }
+]

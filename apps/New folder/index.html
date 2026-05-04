@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Trivia: Arcade Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="arcade-container">
+        <div class="starfield"></div>
+        
+        <div id="game-ui">
+            <header class="hud">
+                <div class="score-block">
+                    <div>1UP</div>
+                    <div id="current-score" class="score-text">00000</div>
+                </div>
+                <div class="score-block">
+                    <div>HIGH SCORE</div>
+                    <div class="score-text">05000</div>
+                </div>
+            </header>
+
+            <div id="start-screen" class="screen active">
+                <h1 class="logo-text">RETRO<br>TRIVIA</h1>
+                <p class="insert-coin blink">INSERT COIN</p>
+                <button id="start-btn" class="arcade-btn">PRESS START</button>
+            </div>
+
+            <div id="trivia-screen" class="screen hidden">
+                <div class="enemy-fleet">
+                    <span class="enemy">👾</span>
+                    <span class="enemy">🛸</span>
+                    <span class="enemy">👾</span>
+                </div>
+                
+                <div class="question-box">
+                    <p id="question-text">Loading incoming transmission...</p>
+                </div>
+                
+                <div id="answer-buttons" class="btn-grid">
+                    </div>
+
+                <div class="player-zone">
+                    <span class="player-ship">🚀</span>
+                </div>
+            </div>
+
+            <div id="game-over-screen" class="screen hidden">
+                <h2 class="game-over-text">GAME OVER</h2>
+                <p class="final-stats">SCORE: <span id="final-score">0</span></p>
+                <button id="restart-btn" class="arcade-btn">CONTINUE?</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
