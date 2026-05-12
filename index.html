@@ -4,229 +4,229 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zachary MacLean | Professional Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         :root {
-            --bg-pure-white: #ffffff;
-            --bg-cream: #fafafa;
-            --mint-light: #e0f2f1;
-            --fern-green: #2e7d32;
-            --moss-subtle: #81c784;
-            --slate-gray: #37474f;
-            --text-main: #2c3e50;
-            --text-dim: #607d8b;
-            --glass-white: rgba(255, 255, 255, 0.8);
-            --glass-border: rgba(129, 199, 132, 0.2);
-            --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.03);
-            --shadow-moss: 0 5px 20px rgba(129, 199, 132, 0.1);
+            --slate-black: #0f1117;
+            --deep-navy: #1a1d27;
+            --accent-blue: #3b82f6;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
+            --card-bg: rgba(255, 255, 255, 0.03);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-pure-white);
+            background-color: var(--slate-black);
             color: var(--text-main);
-            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
         }
 
-        .living-bg {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2;
-            background: radial-gradient(circle at 30% 30%, var(--mint-light) 0%, var(--bg-pure-white) 60%);
-            animation: breatheMisty 12s infinite alternate ease-in-out;
-        }
-
-        @keyframes breatheMisty { 0% { transform: scale(1); opacity: 0.8; } 100% { transform: scale(1.1); opacity: 1; } }
-
         nav {
-            position: fixed; top: 0; width: 100%; padding: 1.2rem 10%;
+            position: fixed; top: 0; width: 100%; padding: 1.5rem 10%;
             display: flex; justify-content: space-between; align-items: center;
-            background: var(--glass-white); backdrop-filter: blur(20px); z-index: 1000;
-            border-bottom: 1px solid rgba(129, 199, 132, 0.1);
+            background: rgba(15, 17, 23, 0.9); backdrop-filter: blur(12px);
+            z-index: 1000; border-bottom: 1px solid var(--border);
         }
 
-        .logo { font-weight: 800; font-size: 1.3rem; color: var(--fern-green); letter-spacing: -0.5px; }
+        .nav-brand { font-weight: 800; letter-spacing: 1px; color: var(--text-main); font-size: 1rem; }
 
         .hero {
-            height: 100vh; display: flex; flex-direction: column; justify-content: center;
-            align-items: center; text-align: center; padding: 120px 10% 60px 10%;
-            background: linear-gradient(to bottom, var(--bg-pure-white) 0%, var(--bg-cream) 100%);
+            min-height: 90vh; display: flex; flex-direction: column; justify-content: center;
+            padding: 120px 15% 60px 15%; background: radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 50%);
         }
 
         .profile-container {
-            width: 180px; height: 180px; margin-bottom: 2rem; position: relative; border-radius: 50%;
-            padding: 8px; background: linear-gradient(135deg, var(--mint-light), #fff, var(--moss-subtle));
-            box-shadow: var(--shadow-moss);
+            width: 150px;
+            height: 150px;
+            margin-bottom: 2rem;
+            border-radius: 50%;
+            padding: 5px;
+            border: 2px solid var(--accent-blue);
+            background: var(--slate-black);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
         }
 
-        .profile-img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid #fff; }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; letter-spacing: -2px; margin-bottom: 1rem; }
+        .hero p { max-width: 700px; font-size: 1.15rem; color: var(--text-dim); margin-bottom: 2.5rem; font-weight: 300; }
 
-        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: 1rem; }
-        .hero span { color: var(--fern-green); }
-
-        .cta-btn {
-            padding: 12px 28px; background: var(--fern-green); color: #fff;
-            text-decoration: none; font-weight: 700; border-radius: 50px;
-            transition: 0.3s; font-size: 0.8rem; text-transform: uppercase; border: none;
-            cursor: pointer; display: inline-block; margin-top: 10px;
+        section { padding: 80px 15%; }
+        .section-label {
+            font-family: 'JetBrains Mono', monospace; color: var(--accent-blue);
+            font-size: 0.8rem; text-transform: uppercase; margin-bottom: 2rem; display: block; letter-spacing: 2px;
         }
 
-        .cta-btn:hover { background: var(--moss-subtle); transform: translateY(-3px); }
-
-        section { padding: 80px 10%; }
-        
-        .section-title {
-            font-size: 2.2rem; margin-bottom: 3rem; font-weight: 800;
-            border-left: 6px solid var(--moss-subtle); padding-left: 20px;
-        }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 
         .card {
-            background: #fff; border: 1px solid var(--glass-border); padding: 2rem;
-            border-radius: 25px; box-shadow: var(--shadow-light); transition: 0.3s;
+            background: var(--card-bg); border: 1px solid var(--border);
+            padding: 2.5rem; border-radius: 16px; transition: all 0.3s ease;
         }
 
-        .card:hover { transform: translateY(-5px); box-shadow: var(--shadow-moss); }
+        .card:hover { border-color: var(--accent-blue); transform: translateY(-4px); }
 
-        .tag {
-            display: inline-block; background: var(--mint-light); color: var(--fern-green);
-            padding: 5px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700;
-            margin-bottom: 15px; text-transform: uppercase;
-        }
+        .exp-container { display: flex; flex-direction: column; gap: 20px; }
+        .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; }
+        .company-name { color: var(--accent-blue); font-weight: 700; font-size: 1.2rem; }
+        .job-title { font-weight: 600; color: var(--text-main); }
+        .date-range { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--text-dim); }
+        .exp-detail { color: var(--text-dim); font-size: 0.95rem; margin-top: 8px; list-style-position: inside; }
 
         .app-window {
-            width: 100%; height: 500px; border: 1px solid #eee; border-radius: 20px;
-            margin-top: 2rem; background: #000; overflow: hidden;
+            width: 100%; height: 650px; background: #000;
+            border-radius: 20px; border: 1px solid var(--border);
+            margin-top: 2rem; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.4);
         }
 
-        .app-window iframe { width: 100%; height: 100%; border: none; }
+        iframe { width: 100%; height: 100%; border: none; }
 
-        .exp-item { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px dashed var(--moss-subtle); }
-        .exp-item h3 { color: var(--fern-green); }
-        .exp-date { font-size: 0.85rem; font-weight: 600; color: var(--text-dim); }
+        footer { padding: 60px 15%; border-top: 1px solid var(--border); color: var(--text-dim); display: flex; justify-content: space-between; align-items: center; }
 
-        footer { text-align: center; padding: 60px; color: var(--text-dim); background: var(--bg-cream); }
+        @media (max-width: 768px) {
+            .hero, section, footer { padding: 60px 8%; }
+            .hero h1 { font-size: 3rem; }
+            .exp-header { flex-direction: column; gap: 5px; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="living-bg"></div>
-
     <nav>
-        <div class="logo">ZACHARY MACLEAN</div>
-        <div style="font-size: 0.8rem; font-weight: 600;">Rutgers Accounting • 2027</div>
+        <div class="nav-brand">ZACHARY MACLEAN</div>
+        <div style="font-family: 'JetBrains Mono'; font-size: 0.7rem; color: var(--text-dim);">PISCATAWAY, NJ</div>
     </nav>
 
     <header class="hero">
         <div class="profile-container" data-aos="zoom-in">
-            <img src="Assets/ProfilePicture.JPG" alt="Zachary MacLean" class="profile-img">
+            <img src="Assets/ProfilePicture.JPG" alt="Zachary MacLean" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
         </div>
-        <h1 data-aos="fade-up">Operations Leader & <span>Future Accountant</span>.</h1>
-        <p data-aos="fade-up" data-aos-delay="200">Junior Accounting Major at Rutgers Business School. 8+ years of experience in management, compliance auditing, and technical operations.</p>
-        <div data-aos="fade-up" data-aos-delay="300">
-            <a href="mailto:zackmac1998@gmail.com" class="cta-btn">Contact Zach</a>
+        <h1 data-aos="fade-up">ZACHARY MACLEAN</h1>
+        <p data-aos="fade-up" data-aos-delay="100">
+            Senior at Rutgers Business School specializing in Accounting. Bridging the gap between the analytical rigors of Applied Mathematics and Computer Science to deliver high-integrity financial auditing.
+        </p>
+        <div data-aos="fade-up" data-aos-delay="200">
+            <a href="mailto:zackmac1998@gmail.com" class="card" style="padding: 1rem 2rem; text-decoration: none; font-weight: 700; font-size: 0.9rem;">REACH OUT</a>
         </div>
     </header>
 
     <section id="expertise">
-        <h2 class="section-title" data-aos="fade-right">Core Competencies</h2>
+        <span class="section-label">Quantitative Foundation</span>
         <div class="grid">
             <div class="card" data-aos="fade-up">
-                <div class="tag">Compliance</div>
-                <h3>Audit & Food Safety</h3>
-                <p>Award-winning food safety compliance lead. Expertise in daily auditing and maintaining strict regulatory standards.</p>
+                <h3 style="margin-bottom: 1rem;">Applied Mathematics</h3>
+                <p style="color: var(--text-dim);">Rigorous analytical training focusing on logical proofs and quantitative modeling. Provides the framework for verifying complex data structures and financial algorithms.</p>
             </div>
             <div class="card" data-aos="fade-up" data-aos-delay="100">
-                <div class="tag">Inventory</div>
-                <h3>Operational Analysis</h3>
-                <p>Advanced order writing and inventory management to maximize sales while minimizing shrink and waste.</p>
+                <h3 style="margin-bottom: 1rem;">Computer Science</h3>
+                <p style="color: var(--text-dim);">Technical proficiency in system logic and code architecture. Capable of auditing both the financial output and the underlying technical processes of automated systems.</p>
             </div>
             <div class="card" data-aos="fade-up" data-aos-delay="200">
-                <div class="tag">Leadership</div>
-                <h3>Team Management</h3>
-                <p>Directing cross-functional teams of 20+ employees, managing onboarding, scheduling, and conflict resolution.</p>
+                <h3 style="margin-bottom: 1rem;">Accounting</h3>
+                <p style="color: var(--text-dim);">Professional mastery of GAAP standards and financial reporting established at Rutgers Business School. Focused on the global application of accuracy, compliance, and institutional trust.</p>
             </div>
         </div>
     </section>
 
-    <section id="experience" style="background: var(--bg-cream); border-radius: 50px; margin: 0 5%;">
-        <h2 class="section-title" data-aos="fade-right">Professional Experience</h2>
-        
-        <div class="exp-item" data-aos="fade-up">
-            <div class="exp-date">July 2023 – Present</div>
-            <h3>Produce Order Writer | Whole Foods Market</h3>
-            <p>Maintaining optimal inventory levels, reducing shrink, and designing merchandising maps to boost sales through data-driven planning.</p>
-        </div>
-
-        <div class="exp-item" data-aos="fade-up">
-            <div class="exp-date">Sep 2022 – July 2023</div>
-            <h3>Associate Team Leader | Whole Foods Market</h3>
-            <p>Supervised ~20 employees, managed shift scheduling, and implemented training for new hires to ensure operational excellence.</p>
-        </div>
-
-        <div class="exp-item" data-aos="fade-up">
-            <div class="exp-date">Feb 2016 – Sep 2020</div>
-            <h3>Assistant HVAC Technician | JDM Heating and Cooling</h3>
-            <p>Hands-on technical experience in residential plumbing, soldering, and mechanical servicing in a fast-paced trade environment.</p>
-        </div>
-    </section>
-
-    <section id="digital-trailblazing">
-        <h2 class="section-title" data-aos="fade-right">Digital Trailblazing</h2>
-        <div class="grid">
-            <div class="card" data-aos="fade-up" style="grid-column: 1 / -1; text-align: center;">
-                <div class="tag">Interactive Project</div>
-                <h3>ISC Study Application</h3>
-                <p>An embedded tool developed to streamline Information Systems concepts.</p>
-                <div class="app-window">
-                    <iframe src="https://zm341.github.io/apps/ISCStudyApp"></iframe>
+    <section id="experience">
+        <span class="section-label">Professional History</span>
+        <div class="exp-container">
+            
+            <div class="card" data-aos="fade-up">
+                <div class="exp-header">
+                    <div>
+                        <div class="company-name">Whole Foods Market</div>
+                        <div class="job-title">Produce Order Writer</div>
+                    </div>
+                    <div class="date-range">Jul 2023 – Present</div>
                 </div>
+                <p class="exp-detail">Optimize daily procurement to maintain precise inventory levels and minimize loss. Leverage historical sales data and operational records to drive predictive planning and merchandising efficiency.</p>
             </div>
 
-            <div class="card" data-aos="fade-up" style="grid-column: 1 / -1; text-align: center;">
-                <div class="tag">Gaming Logic</div>
-                <h3>Retro Arcade Trivia</h3>
-                <p>A Galaga-themed trivia engine built to demonstrate JSON data handling and UI animations.</p>
-                <div class="app-window">
-                    <iframe src="https://zm341.github.io/apps/RetroTriviaApp"></iframe>
+            <div class="card" data-aos="fade-up">
+                <div class="exp-header">
+                    <div>
+                        <div class="company-name">Whole Foods Market</div>
+                        <div class="job-title">Produce Associate Team Leader</div>
+                    </div>
+                    <div class="date-range">Sep 2022 – Jul 2023</div>
                 </div>
+                <p class="exp-detail">Led a cross-functional team of 20+ employees; spearheaded personnel scheduling, task delegation, and the implementation of onboarding protocols to ensure operational consistency.</p>
             </div>
+
+            <div class="card" data-aos="fade-up">
+                <div class="exp-header">
+                    <div>
+                        <div class="company-name">Whole Foods Market</div>
+                        <div class="job-title">Shift Leader / Food Safety Compliance</div>
+                    </div>
+                    <div class="date-range">Feb 2021 – Sep 2022</div>
+                </div>
+                <p class="exp-detail">Served as Person-in-Charge for store-wide operations. Managed daily food safety audits, contributing to the location earning "Best Food Safety" in the Northeast Region (2021).</p>
+            </div>
+
+            <div class="card" data-aos="fade-up">
+                <div class="exp-header">
+                    <div>
+                        <div class="company-name">JDM Heating and Cooling</div>
+                        <div class="job-title">Assistant HVAC Technician</div>
+                    </div>
+                    <div class="date-range">Feb 2016 – Sep 2020</div>
+                </div>
+                <p class="exp-detail">Managed residential plumbing and mechanical systems maintenance. Utilized technical diagnostics, soldering, and brazing to resolve complex system-level malfunctions.</p>
+            </div>
+
         </div>
     </section>
 
-    <section id="education">
-        <h2 class="section-title" data-aos="fade-right">Education</h2>
+    <section id="academic">
+        <span class="section-label">Academic Credentials</span>
         <div class="grid">
             <div class="card" data-aos="zoom-in">
-                <h3>Rutgers University</h3>
-                <p><strong>Bachelor of Science in Accounting</strong></p>
-                <p>Expected May 2027</p>
+                <h3 style="color: var(--accent-blue);">Rutgers University</h3>
+                <p style="font-weight: 600;">B.S. Accounting</p>
+                <p class="date-range">Expected May 2027</p>
             </div>
             <div class="card" data-aos="zoom-in" data-aos-delay="100">
-                <h3>Brookdale Community College</h3>
-                <p><strong>A.S. in Applied Mathematics</strong></p>
-                <p>August 2024</p>
+                <h3 style="color: var(--accent-blue);">Brookdale Community College</h3>
+                <p style="font-weight: 600;">A.S. Applied Mathematics</p>
+                <p class="date-range">August 2024</p>
             </div>
+            <div class="card" data-aos="zoom-in" data-aos-delay="200">
+                <h3 style="color: var(--accent-blue);">NJIT</h3>
+                <p style="font-weight: 600;">Computer Science & Engineering</p>
+                <p class="date-range">2016 – 2017</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="logic-visualizer">
+        <span class="section-label">Interactive Case Study</span>
+        <h2 style="margin-bottom: 1rem;">Triple-Entry Theory</h2>
+        <p style="color: var(--text-dim); max-width: 700px; margin-bottom: 2rem;">
+            A demonstration of the modern ledger: exploring how cryptographic signatures and shared data structures reduce information asymmetry and enhance auditability.
+        </p>
+        <div class="app-window" data-aos="fade-up">
+            <iframe src="https://zm341.github.io/apps/TripleEntryApp"></iframe>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Zachary MacLean | Rutgers Business School</p>
-        <p style="font-size: 0.8rem; margin-top: 10px;">Port Monmouth, NJ | 732-778-7734</p>
+        <div>732-778-7734</div>
+        <div>zackmac1998@gmail.com</div>
+        <div style="font-family: 'JetBrains Mono'; font-size: 0.7rem;">&copy; 2026 Z. MACLEAN</div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: false });
-        document.addEventListener('mousemove', (e) => {
-            const bg = document.querySelector('.living-bg');
-            const x = (window.innerWidth - e.pageX) / 120;
-            const y = (window.innerHeight - e.pageY) / 120;
-            bg.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
-        });
+        AOS.init({ duration: 800, once: true });
     </script>
 </body>
 </html>
