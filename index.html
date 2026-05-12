@@ -84,6 +84,10 @@
 
         footer { padding: 60px 15%; border-top: 1px solid var(--border); color: var(--text-dim); display: flex; justify-content: space-between; align-items: center; }
 
+        @media (max-width: 1024px) {
+            .grid-case-study { grid-template-columns: 1fr !important; }
+        }
+
         @media (max-width: 768px) {
             .hero, section, footer { padding: 60px 8%; }
             .hero h1 { font-size: 3rem; }
@@ -129,6 +133,44 @@
             <div class="card" data-aos="fade-up" data-aos-delay="200">
                 <h3 style="margin-bottom: 1rem;">Accounting</h3>
                 <p style="color: var(--text-dim);">Professional mastery of GAAP standards and financial reporting at Rutgers Business School. Focused on the global application of accuracy, compliance, and institutional trust.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="case-study">
+        <span class="section-label">Field Case Study</span>
+        <h2 style="margin-bottom: 1.5rem;">Operational Audit: Shrink Mitigation</h2>
+        <div class="card" style="background: rgba(59, 130, 246, 0.05); border-color: rgba(59, 130, 246, 0.3);">
+            <div class="grid grid-case-study" style="grid-template-columns: 1fr 2fr; gap: 40px; align-items: start;">
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 1rem; font-size: 0.9rem; text-transform: uppercase;">The Challenge</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-main); margin-bottom: 1rem;">
+                        Inventory "shrink" (loss) was consistently exceeding targeted regional thresholds, impacting departmental profitability. 
+                    </p>
+                    <p style="font-size: 0.85rem; color: var(--text-dim); font-family: 'JetBrains Mono';">
+                        KPI: Shrink-to-Sales Variance
+                    </p>
+                </div>
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 1rem; font-size: 0.9rem; text-transform: uppercase;">The Analysis & Action</h3>
+                    <p style="font-size: 0.95rem; margin-bottom: 1.5rem; color: var(--text-dim);">
+                        Utilizing internal shrink recording software and regional procurement guidance, I performed a <b>velocity audit</b> of the core product list. 
+                    </p>
+                    <ul style="list-style: none; font-size: 0.9rem; color: var(--text-main);">
+                        <li style="margin-bottom: 12px; display: flex; gap: 10px;">
+                            <span style="color: var(--accent-blue);">01.</span>
+                            <span>Targeted high-variance SKUs whose sales velocity failed to justify inventory carry-costs.</span>
+                        </li>
+                        <li style="margin-bottom: 12px; display: flex; gap: 10px;">
+                            <span style="color: var(--accent-blue);">02.</span>
+                            <span>Synthesized data from regional ordering tools to identify inefficiencies in standard procurement logic.</span>
+                        </li>
+                        <li style="margin-bottom: 12px; display: flex; gap: 10px;">
+                            <span style="color: var(--accent-blue);">03.</span>
+                            <span>Pivoted purchasing strategy to reflect real-time sell-through rates, aligning physical inventory with software projections.</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
